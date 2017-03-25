@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Pokemon!</title>
-  </head>
-  <body>
-    <p id="loading">Loading...</p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Pokemon!</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <p id="loading">Loading...</p>
+</body>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
+<script type="text/javascript">
+  $(document).ready(function() {
       // 1. show the name of a pokemon
       // 2. show the image of a pokemon
       $.get("http://pokeapi.co/api/v2/pokemon/1", function(response) {
-        $('body').html('<h3>' + response.name + '</h3>');
+        $('body').html('<h3>' + response.name + '</h3>'); 
+        $('body').append('<img src=' + response.sprites.front_default + '>')
       });
     });
   </script>
-</html>
+
+  </html>
